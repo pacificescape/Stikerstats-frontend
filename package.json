@@ -1,0 +1,45 @@
+{
+  "name": "steakerstats-front",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pacificescape/steakerstats-front.git"
+  },
+  "keywords": [
+    "sticker",
+    "stats"
+  ],
+  "author": "Arkasha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pacificescape/steakerstats-front/issues"
+  },
+  "homepage": "https://github.com/pacificescape/steakerstats-front#readme",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
