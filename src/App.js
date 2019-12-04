@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react'
 import './App.css';
+import { getTop } from './api'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isError: false,
+      error: {},
+      isLoading: true,
+      isAuth: false,
+      tops: [],
+      data: {},
+    }
+  }
+
+  componentDidMount() {
+    getTop()
+      .then((tops) => {
+        tops = tops.map((c) => c.title)
+        this.setState({ tops })
+      })
+  }
+
+  render() {
+    let tops = this.state.tops.map((e, i) => <li key={i}>{e}</li>)
+    return (
+      <ul>
+        {tops}
+      </ul>
+    )
+  }
 }
-
-export default App;
