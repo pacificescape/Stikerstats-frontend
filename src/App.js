@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './App.css';
 import { getTop } from './api'
+import { TopPack } from './components'
 
 export default class App extends Component {
   constructor(props) {
@@ -19,17 +20,21 @@ export default class App extends Component {
   componentDidMount() {
     getTop()
       .then((tops) => {
-        tops = tops.map((c) => c.title)
         this.setState({ tops })
       })
   }
 
+  renderTopList = () => {
+    let list = this.state.tops.sort((a,b) => b.main.total_usage - a.main.total_usage)
+  return list.map((e, i) => <TopPack data={e} key={i}/>)
+  }
+
   render() {
-    let tops = this.state.tops.map((e, i) => <li key={i}>{e}</li>)
+    let topList = this.state.tops ? this.renderTopList() : ''
     return (
-      <ul>
-        {tops}
-      </ul>
+      <div className="topListContainer">
+        {topList}
+      </div>
     )
   }
 }
