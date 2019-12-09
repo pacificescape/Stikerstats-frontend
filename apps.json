@@ -1,0 +1,9 @@
+{
+    "apps": [
+      {
+        "name": "stickerstats frontend",
+        "script": "npm",
+        "args": "start"
+      }
+    ]
+  }

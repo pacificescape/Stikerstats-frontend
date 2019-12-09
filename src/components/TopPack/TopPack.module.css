@@ -1,16 +1,17 @@
 .topPack {
-    padding: 10px;
-    background-color: rgb(75, 75, 75);
+    padding: 10px 5px;
+    background-color: rgba(75, 75, 75, 0.6);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     border-radius: 7.5px;
-    color: #feffe0;
+    color: #7876d6;
     align-content: center;
     text-align: center;
     width: 140px;
-    margin: 20px;
+    margin: 15px;
 }
 
 .logo {
-    height: 75px;
+    width: 120px;
 }
 span {
     display: block;
@@ -18,6 +19,9 @@ span {
 
 .name {
     color: #aeaeb6;
+    display: block;
+    font-size: 14px;
+    overflow: hidden
 }
 
 .info {

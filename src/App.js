@@ -23,17 +23,28 @@ export default class App extends Component {
         this.setState({ tops })
       })
   }
-
+  
   renderTopList = () => {
-    let list = this.state.tops.sort((a,b) => b.main.total_usage - a.main.total_usage)
-  return list.map((e, i) => <TopPack data={e} key={i}/>)
+    // let list = this.state.tops.sort((a, b) => b.main.total_usage - a.main.total_usage)
+    return this.state.tops.map((e, i) => <TopPack data={e} key={i} />)
   }
 
   render() {
     let topList = this.state.tops ? this.renderTopList() : ''
     return (
-      <div className="topListContainer">
-        {topList}
+      <div>
+        <header>
+          <h2>
+            Top of stickerpaks
+          </h2>
+          <h6 style={{'color': '#8b8baa', 'marginTop': '5px'}}><a href={'tg://resolve?domain=stickstatbot'}>to add your pack use @stickstatbot</a></h6>
+        </header>
+        
+        <div className="topListWrapper">
+          <div className="topListContainer">
+            {topList}
+          </div>
+        </div>
       </div>
     )
   }

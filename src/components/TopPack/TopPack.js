@@ -8,7 +8,7 @@ const TopPack = (props) => (
         </div>
         <div className="topPack-info">
             <b>{props.data.title}</b>
-            <span className={styles.name}> ({props.data.name})</span>
+            <a href={"tg://addstickers?set="+props.data.name} className={styles.name}> ({props.data.name})</a>
             <span className={styles.info}>Установлен: {props.data.main.total_installed}</span>
             <span className={styles.info}>Использован: {props.data.main.total_usage}</span>
         </div>
