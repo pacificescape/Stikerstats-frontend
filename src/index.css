@@ -32,3 +32,10 @@ li {
 a {
   text-decoration: none;
 }
+
+.widget {
+  box-shadow: 0 0 10px rgba(0,0,0,.5);
+  margin: auto;
+  display: block;
+  width: 50%;
+}
