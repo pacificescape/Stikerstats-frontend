@@ -1,6 +1,6 @@
 {
   "name": "steakerstats-front",
-  "version": "0.0.32",
+  "version": "0.0.33",
   "private": true,
   "dependencies": {
     "autoprefixer": "^9.7.3",
@@ -22,7 +22,7 @@
   "bugs": {
     "url": "https://github.com/pacificescape/steakerstats-front/issues"
   },
-  "homepage": "https://stickersetbot.com/",
+  "homepage": "https://stickerstat.info/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
