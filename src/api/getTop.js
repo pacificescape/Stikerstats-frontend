@@ -4,7 +4,10 @@ const getTop = () => {
     })
         .then((res) => res.json())
         .then((res) => res)
-        .catch(err => err)
+        .catch(err => {
+            console.log(err)
+            return null
+        })
 }
 
 export default getTop;

@@ -20,7 +20,9 @@ export default class App extends Component {
   componentDidMount() {
     getTop()
       .then((tops) => {
-        this.setState({ tops })
+        if (tops) {
+          this.setState({ tops })
+        }
       })
   }
   

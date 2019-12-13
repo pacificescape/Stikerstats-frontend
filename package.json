@@ -1,6 +1,6 @@
 {
   "name": "steakerstats-front",
-  "version": "0.0.31",
+  "version": "0.0.32",
   "private": true,
   "dependencies": {
     "autoprefixer": "^9.7.3",
