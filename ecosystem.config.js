@@ -1,10 +1,10 @@
 module.exports = {
     apps : [{
       name: 'FRONTEND',
-      script: 'serve',
+      script: 'npm',
   
       // Options reference: https://pm2.keymetrics.io/docs/usage/application-declaration/
-      args: 'serve -l 443 -s build',
+      args: 'run build',
       instances: 1,
       autorestart: true,
       watch: true,
