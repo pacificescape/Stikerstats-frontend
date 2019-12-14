@@ -3,7 +3,7 @@ import styles from './TopPack.module.css'
 
 const TopPack = (props) => (
     <div className={styles.topPack}>
-        <div className="topPack-logo">
+        <div className={styles.logoWrapper}>
             <img src={'/file/' + props.data.thumb} className={styles.logo} alt="logo"></img>
         </div>
         <div className="topPack-info">

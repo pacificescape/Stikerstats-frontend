@@ -10,8 +10,24 @@
     margin: 15px;
 }
 
-.logo {
+.logoWrapper {
+    margin: auto;
     width: 120px;
+    height: 120px;
+}
+
+.logoWrapper:before {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    content: "";
+}
+
+.logo {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 120px;
+    max-height: 120px;
 }
 span {
     display: block;
