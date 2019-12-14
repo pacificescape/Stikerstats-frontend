@@ -25,7 +25,7 @@
   "homepage": "https://stickerstat.info/",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && mv build/* /var/www/stickerstat.info/html/",
+    "build": "npm i && react-scripts build && sudo mv build/* /var/www/stickerstat.info/html/",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
