@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
+import { Switch, Route, Link } from "react-router-dom";
 import './App.css';
 import { getTop } from './api'
-import { TopPack } from './components'
+import { TopPackList, MyPacks } from './components'
 
 export default class App extends Component {
   constructor(props) {
@@ -25,28 +26,27 @@ export default class App extends Component {
         }
       })
   }
-  
-  renderTopList = () => {
-    // let list = this.state.tops.sort((a, b) => b.main.total_usage - a.main.total_usage)
-    return this.state.tops.map((e, i) => <TopPack data={e} key={i} />)
-  }
+
+
 
   render() {
-    let topList = this.state.tops ? this.renderTopList() : ''
     return (
       <div>
         <header>
           <h2>
             Top of stickerpaks
           </h2>
-          <h6 style={{'color': '#8b8baa', 'marginTop': '5px'}}><a href={'tg://resolve?domain=stickstatbot'}>to add your pack use @stickstatbot</a></h6>
+          <h6 style={{ 'color': '#8b8baa', 'marginTop': '5px' }}><a href={'tg://resolve?domain=stickstatbot'}>to add your pack use @stickstatbot</a></h6>
         </header>
-        
-        <div className="topListWrapper">
-          <div className="topListContainer">
-            {topList}
-          </div>
-        </div>
+        <Link to="/mypacks">My stickerpacks</Link>
+        <Switch>
+          <Route path="/mypacks">
+            <MyPacks/>
+          </Route>
+          <Route path="/">
+            <TopPackList tops={this.state.tops} />
+          </Route>
+        </Switch>
       </div>
     )
   }

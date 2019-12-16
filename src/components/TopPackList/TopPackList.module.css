@@ -1,0 +1,17 @@
+.topListContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 90%;
+  }
+  
+  .topListWrapper {
+    margin: auto;
+  }
+  
+  @media screen and (max-width: 674px) {
+    .topListContainer {
+      justify-content: space-around;
+    }
+  }
