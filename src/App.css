@@ -1,0 +1,17 @@
+.mypack {
+    display: block;
+    width: 150px;
+    margin: auto;
+}
+
+h6 {
+    margin-bottom: 20px;
+}
+
+h6 a {
+    color: #aeaeb6
+}
+
+a {
+    color: rgb(104, 158, 149);
+}

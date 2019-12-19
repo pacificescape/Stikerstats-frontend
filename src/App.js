@@ -33,12 +33,12 @@ export default class App extends Component {
     return (
       <div>
         <header>
-          <h2>
+          <h2 style={{ 'color': '#8b8baa', 'margin': 'auto' }}>
             Top of stickerpaks
           </h2>
-          <h6 style={{ 'color': '#8b8baa', 'marginTop': '5px' }}><a href={'tg://resolve?domain=stickstatbot'}>to add your pack use @stickstatbot</a></h6>
+          <h6 style={{ 'color': '##aeaeb6', 'marginTop': '5px' }}><a href={'tg://resolve?domain=stickstatbot'}>to add your pack use @stickstatbot</a></h6>
         </header>
-        <Link to="/mypacks">My stickerpacks</Link>
+        <Link className="mypack" to="/mypacks">My stickerpacks</Link>
         <Switch>
           <Route path="/mypacks">
             <MyPacks/>
