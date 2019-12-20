@@ -5,6 +5,10 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+if (window.location.href.indexOf('login') !== -1) {
+    fetch(window.location.href)
+}
+
 ReactDOM.render(<BrowserRouter> <App /> </BrowserRouter>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
