@@ -43,3 +43,18 @@ span {
 .info {
     font-size: 14px;
 }
+
+
+@media screen and (max-width: 400px) {
+    .info {
+        overflow: hidden;
+    }
+    
+    .topPack {
+        width: 86%;   
+    }
+
+    .logoWrapper {
+        float: left;
+    }
+}
