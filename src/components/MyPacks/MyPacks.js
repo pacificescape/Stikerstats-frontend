@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { getMyPacks } from '../../api'
 import TopPackList from '../TopPackList/TopPackList'
+import styles from './MyPacks.module.css'
 
 export default class MyPacks extends Component {
     constructor(props) {
@@ -21,7 +22,7 @@ export default class MyPacks extends Component {
 
     }
     render() {
-        if (!this.state.tops.length) return (<span>'У вас нет стикерпаков'</span>)
+        if (!this.state.tops.length) return (<h5>У вас нет стикерпаков</h5>)
 
         return (
             <div>

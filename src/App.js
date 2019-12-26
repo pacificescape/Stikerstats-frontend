@@ -3,6 +3,7 @@ import { Switch, Route, Link } from "react-router-dom";
 import './App.css';
 import { getTop } from './api'
 import { TopPackList, MyPacks } from './components'
+import autoprefixer from 'autoprefixer';
 
 export default class App extends Component {
   constructor(props) {
@@ -27,6 +28,11 @@ export default class App extends Component {
       })
   }
 
+  links = {
+    "margin": "auto",
+    "width": "fit-content",
+    "display": "block"
+  }
 
 
   render() {
@@ -38,12 +44,13 @@ export default class App extends Component {
           </h2>
           <h6 style={{ 'color': '##aeaeb6', 'marginTop': '5px' }}><a href={'tg://resolve?domain=stickstatbot'}>to add your pack use @stickstatbot</a></h6>
         </header>
-        <Link className="mypack" to="/mypacks">My stickerpacks</Link>
         <Switch>
           <Route path="/mypacks">
+            <Link style={this.links} className="mypack" to="/">Top stickerpacks</Link>
             <MyPacks/>
           </Route>
           <Route path="/">
+            <Link style={this.links} className="mypack" to="/mypacks">My stickerpacks</Link>
             <TopPackList tops={this.state.tops} />
           </Route>
         </Switch>
