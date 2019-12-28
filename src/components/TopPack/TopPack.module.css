@@ -44,6 +44,11 @@ span {
     font-size: 14px;
 }
 
+.Chart {
+    position: absolute;
+    transform: translateY(-120px);
+    margin-left: 12px;
+}
 
 @media screen and (max-width: 400px) {
     .info {
