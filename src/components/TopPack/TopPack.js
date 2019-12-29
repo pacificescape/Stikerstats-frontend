@@ -16,7 +16,6 @@ export default class TopPack extends Component {
     }
 
     mouseOver = (e) => {
-        e.target.style.opacity = 0.8
         let trigger = 'ChartInstalled'
 
         if(e.target.className.includes('used')) {
@@ -32,7 +31,6 @@ export default class TopPack extends Component {
 
 
     mouseOut = (e) => {
-        e.target.style.opacity = 1
         this.setState({
             logoWrapper: "inline-block",
             ChartInstalled: "none",

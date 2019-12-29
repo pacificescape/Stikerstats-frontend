@@ -70,4 +70,9 @@ span {
     .logoWrapper {
         float: left;
     }
+
+    .Chart {
+        transform: translateY(-120px);
+        transform: translateX(-15px);
+    }
 }
