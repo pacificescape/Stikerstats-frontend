@@ -1,9 +1,9 @@
 .topPack {
     padding: 10px 5px;
-    background-color: rgba(56, 51, 78, 0.6);
+    background-color: rgba(124, 144, 206, 0.1);
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
-    border-radius: 4px;
-    color: #7876d6;
+    border-radius: 1px;
+    color: #afafae;
     align-content: center;
     text-align: center;
     width: 140px;
@@ -30,18 +30,23 @@
     max-height: 120px;
 }
 span {
-    display: block;
+    display: inline-block;
 }
 
 .name {
     color: #aeaeb6;
     display: block;
-    font-size: 14px;
+    font-size: 12px;
     overflow: hidden
 }
 
+.topPackInfo{
+    display: inline-block;
+    vertical-align: bottom;
+}
+
 .info {
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .Chart {
@@ -58,7 +63,24 @@ span {
     color: rgb(62, 137, 128) !important;
 }
 
+b {
+    font-weight: 500;
+}
+
 @media screen and (max-width: 414px) {
+    span {
+        display: block;
+    }
+
+    .topPack p {
+        display: none;
+    }
+
+    b {
+        display: block;
+        margin-top: 12px;
+    }
+
     .info {
         overflow: hidden;
     }
@@ -72,7 +94,6 @@ span {
     }
 
     .Chart {
-        transform: translateY(-120px);
-        transform: translateX(-15px);
+        transform: translate(-15px, -30px);
     }
 }

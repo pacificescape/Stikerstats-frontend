@@ -15,3 +15,7 @@ h6 a {
 a {
     color: rgb(104, 158, 149);
 }
+
+span {
+    display: inline-block;
+}

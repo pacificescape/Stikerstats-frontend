@@ -15,22 +15,21 @@ export default class TopPack extends Component {
         Object.assign(this.state, props.data)
     }
 
-    mouseOver = (e) => {
-        let trigger = 'ChartInstalled'
-
-        if(e.target.className.includes('used')) {
-            trigger = 'ChartUsage'
-        }
-
-
+    mouseOverInstalled = () => {
         this.setState({
             logoWrapper: "none",
-            [trigger]: "block"
+            ChartInstalled: "block"
         })
     }
 
+    mouseOverUsage = () => {
+        this.setState({
+            logoWrapper: "none",
+            ChartUsage: "block"
+        })
+    }
 
-    mouseOut = (e) => {
+    mouseOut = () => {
         this.setState({
             logoWrapper: "inline-block",
             ChartInstalled: "none",
@@ -49,16 +48,34 @@ export default class TopPack extends Component {
 
         return (
             <div className={styles.topPack}>
+            <div className={styles.topPackInfo}>
+                    {/* <span className={styles.name}>({this.state.name})</span> */}
+
+                    <span
+                        className={styles.info + ' ' + styles.installed}
+                        onMouseOver={this.mouseOverInstalled}
+                        onMouseOut={this.mouseOut}
+                    >Установлен: {this.state.main.total_installed - this.state.main.total_removed}</span>
+
+                    <span
+                        className={styles.info + ' ' + styles.used}
+                        onMouseOver={this.mouseOverUsage}
+                        onMouseOut={this.mouseOut}
+                    >Использован: {this.state.main.total_usage}
+                    </span>
+                </div>
+                <p></p>
+                <p></p>
                 <div className={styles.logoWrapper}>
                     <a href={"tg://addstickers?set=" + this.state.name}>
                         <img
                             style={{ display: this.state.logoWrapper }}
                             src={'/file/' + this.state.thumb}
-                            className={styles.logo}
+                            className={styles.logo + ' logo'}
                             alt="logo"></img>
                     </a>
                 </div>
-                <div className={styles.Chart} style={{ display: this.state.ChartInstalled }}>
+                <div className={styles.Chart + ' installedchart'} style={{ display: this.state.ChartInstalled }}>
                     <Chart
                         colors={{
                             bg: 'rgba(83, 135, 204, 0.2)',
@@ -69,7 +86,7 @@ export default class TopPack extends Component {
                         name={this.state.name + '_installed'}
                     />
                 </div>
-                <div className={styles.Chart} style={{ display: this.state.ChartUsage }}>
+                <div className={styles.Chart + ' usagechart'} style={{ display: this.state.ChartUsage }}>
                     <Chart
                         colors={{
                             bg: 'rgba(62, 137, 128, 0.2)',
@@ -80,23 +97,9 @@ export default class TopPack extends Component {
                         name={this.state.name + '_used'}
                     />
                 </div>
-                <div className="topPack-info">
+                <p></p>
                     <b>{this.state.title}</b>
-                    <span className={styles.name}>({this.state.name})</span>
 
-                    <span
-                        className={styles.info + ' installed ' + styles.installed}
-                        onMouseOver={this.mouseOver}
-                        onMouseOut={this.mouseOut}
-                    >Установлен: {this.state.main.total_installed - this.state.main.total_removed}</span>
-
-                    <span
-                        className={styles.info + ' used ' + styles.used}
-                        onMouseOver={this.mouseOver}
-                        onMouseOut={this.mouseOut}
-                    >Использован: {this.state.main.total_usage}
-                    </span>
-                </div>
             </div>
         )
     }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Switch, Route, Link } from "react-router-dom";
 import './App.css';
+import style from './App.module.css'
 import { getTop } from './api'
 import { TopPackList, MyPacks } from './components'
 import autoprefixer from 'autoprefixer';
@@ -28,11 +29,44 @@ export default class App extends Component {
       })
   }
 
-  links = {
-    "margin": "auto",
-    "width": "fit-content",
-    "display": "block"
+  showAllInstalls = () => {
+    let logo = document.getElementsByClassName('logo')
+    for (let i = 0; i < logo.length; i++) {
+      logo[i].style.display = "none"
+    }
+    let installed = document.getElementsByClassName('installedchart')
+    for (let i = 0; i < installed.length; i++) {
+      installed[i].style.display = "block"
+    }
   }
+
+  showAllUsages = () => {
+    let logo = document.getElementsByClassName('logo')
+    for (let i = 0; i < logo.length; i++) {
+      logo[i].style.display = "none"
+    }
+    let usages = document.getElementsByClassName('usagechart')
+    for (let i = 0; i < usages.length; i++) {
+      usages[i].style.display = "block"
+    }
+  }
+
+  hideAllCharts = () => {
+    let logo = document.getElementsByClassName('logo')
+    for (let i = 0; i < logo.length; i++) {
+      logo[i].style.display = "inline-block"
+    }
+    let usages = document.getElementsByClassName('usagechart')
+    for (let i = 0; i < usages.length; i++) {
+      usages[i].style.display = "none"
+    }
+    let installed = document.getElementsByClassName('installedchart')
+    for (let i = 0; i < installed.length; i++) {
+      installed[i].style.display = "none"
+    }
+  }
+
+
 
 
   render() {
@@ -46,11 +80,19 @@ export default class App extends Component {
         </header>
         <Switch>
           <Route path="/mypacks">
-            <Link style={this.links} className="mypack" to="/">Top stickerpacks</Link>
-            <MyPacks/>
+          <div className={style.buttons}>
+            <span className={style.links + " mypack"} onMouseOver={this.showAllInstalls} onMouseOut={this.hideAllCharts}>all installs</span>
+            <span className={style.links + " mypack"} onMouseOver={this.showAllUsages} onMouseOut={this.hideAllCharts}>all usages</span>
+            <Link className={style.links + " mypack"} to="/">Top stickerpacks</Link>
+          </div>
+            <MyPacks />
           </Route>
           <Route path="/">
-            <Link style={this.links} className="mypack" to="/mypacks">My stickerpacks</Link>
+          <div className={style.buttons}>
+            <span className={style.links + " mypack"} onMouseOver={this.showAllInstalls} onMouseOut={this.hideAllCharts}>all installs</span>
+            <span className={style.links + " mypack"} onMouseOver={this.showAllUsages} onMouseOut={this.hideAllCharts}>all usages</span>
+            <Link className={style.links + " mypack"} to="/mypacks">My stickerpacks</Link>
+          </div>
             <TopPackList tops={this.state.tops} />
           </Route>
         </Switch>

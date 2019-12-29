@@ -1,0 +1,10 @@
+.links {
+    margin: 15px;
+    width: fit-content;
+    display: inline-block;
+}
+
+.buttons {
+    width: 90%;
+    margin: auto;
+}
