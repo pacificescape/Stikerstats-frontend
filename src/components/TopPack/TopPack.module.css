@@ -50,13 +50,21 @@ span {
     margin-left: 12px;
 }
 
+.installed:hover {
+    color: rgb(83, 135, 204) !important;
+}
+
+.used:hover {
+    color: rgb(62, 137, 128) !important;
+}
+
 @media screen and (max-width: 400px) {
     .info {
         overflow: hidden;
     }
-    
+
     .topPack {
-        width: 86%;   
+        width: 86%;
     }
 
     .logoWrapper {

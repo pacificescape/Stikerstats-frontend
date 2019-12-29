@@ -5,12 +5,15 @@ export default class ChartComp extends Component {
     constructor(props) {
         super(props)
         this.node = React.createRef()
-        this.state = {}
-        Object.assign(this.state, props.data)
+        this.state = {
+            name: props.name,
+            total: props.total,
+            colors: props.colors
+        }
     }
+
     makeChart = () => {
         let node = this.state.name
-
         let total = this.state.total
         let first = {}
         Object.assign(first, this.state.total[0])
@@ -26,13 +29,14 @@ export default class ChartComp extends Component {
                     data: total.map((i) => {
                         return {
                             x: `${new Date(i.date).getDate()}/${new Date(i.date).getMonth() + 1}`,
-                             y: i.total_usage }
+                            y: i.total_data
+                            }
                     }).reverse(),
                     backgroundColor: [
-                        'rgba(54, 162, 235, 0.2)'
+                        this.state.colors.bg
                     ],
                     borderColor: [
-                        'rgba(54, 162, 235, 1)'
+                        this.state.colors.border
                     ],
                     borderWidth: 1
                 }]
