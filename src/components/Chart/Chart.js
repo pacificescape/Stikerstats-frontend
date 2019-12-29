@@ -12,13 +12,28 @@ export default class ChartComp extends Component {
         }
     }
 
+    addValue = (total) => {
+        let first = {}
+        let now = Date.now()
+        let last = new Date(total[0].date)
+
+        const StartOfDayMs = (ms) => ms - (ms % (86400 * 1000))
+
+        if(StartOfDayMs(now) === StartOfDayMs(last)) {
+            return total
+        }
+
+        Object.assign(first, total[0])
+        total.unshift(first)
+        total[0].date = now
+
+        return total
+    }
+
     makeChart = () => {
         let node = this.state.name
-        let total = this.state.total
-        let first = {}
-        Object.assign(first, this.state.total[0])
-        total.unshift(first)
-        total[0].date = Date.now()
+        let total = this.addValue(this.state.total)
+
 
         return new Chart(node, {
             type: 'line',
@@ -38,7 +53,7 @@ export default class ChartComp extends Component {
                     borderColor: [
                         this.state.colors.border
                     ],
-                    borderWidth: 1
+                    borderWidth: 2
                 }]
             },
             options: {
@@ -49,10 +64,21 @@ export default class ChartComp extends Component {
                 },
                 scales: {
                     yAxes: [{
-                        display: false,
-                        stacked: true,
+                        display: true,
+                        stacked: false,
                         ticks: {
-                            beginAtZero: true
+                            min: 0,
+                            stepSize: 100,
+                            beginAtZero: false,
+                            mirror: true,
+                            maxTicksLimit: 4
+                        }
+                    }],
+                    xAxes: [{
+                        display: true,
+                        stacked: false,
+                        ticks: {
+                            maxTicksLimit: 4,
                         }
                     }]
                 }

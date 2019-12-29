@@ -28,6 +28,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "npm i && react-scripts build && sudo rsync -r build/* /var/www/stickerstat.info/html/",
+    "rebuild": "react-scripts build && sudo rsync -r build/* /var/www/stickerstat.info/html/",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

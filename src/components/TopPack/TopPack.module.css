@@ -58,7 +58,7 @@ span {
     color: rgb(62, 137, 128) !important;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 414px) {
     .info {
         overflow: hidden;
     }
