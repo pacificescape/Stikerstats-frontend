@@ -3,7 +3,7 @@ import { Switch, Route, Link } from "react-router-dom";
 import './App.css';
 import style from './App.module.css'
 import { getTop } from './api'
-import { TopPackList, MyPacks } from './components'
+import { TopPackList, MyPacks, Footer, Widget } from './components'
 import autoprefixer from 'autoprefixer';
 
 export default class App extends Component {
@@ -96,6 +96,8 @@ export default class App extends Component {
             <TopPackList tops={this.state.tops} />
           </Route>
         </Switch>
+        <Widget />
+        <Footer />
       </div>
     )
   }
