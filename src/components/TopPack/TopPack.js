@@ -70,7 +70,7 @@ export default class TopPack extends Component {
                     <a href={"tg://addstickers?set=" + this.state.name}>
                         <img
                             style={{ display: this.state.logoWrapper }}
-                            src={'/file/' + this.state.thumb}
+                            src={'/thumb/' + this.state.thumb}
                             className={styles.logo + ' logo'}
                             alt="logo"></img>
                     </a>
