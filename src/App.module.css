@@ -8,3 +8,10 @@
     width: 90%;
     margin: auto;
 }
+
+.quotaf {
+    display: block;
+    width: 150px;
+    margin: auto;
+    color: rgb(89, 60, 219);
+}

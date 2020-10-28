@@ -3,8 +3,7 @@ import { Switch, Route, Link } from "react-router-dom";
 import './App.css';
 import style from './App.module.css'
 import { getTop } from './api'
-import { TopPackList, MyPacks, Footer, Widget } from './components'
-import autoprefixer from 'autoprefixer';
+import { TopPackList, MyPacks, Footer, Widget, QuotAf } from './components'
 
 export default class App extends Component {
   constructor(props) {
@@ -85,19 +84,29 @@ export default class App extends Component {
             <span className={style.links + " mypack"} onMouseOver={this.showAllUsages} onMouseOut={this.hideAllCharts}>all usages</span>
             <Link className={style.links + " mypack"} to="/">Top stickerpacks</Link>
           </div>
-            <MyPacks />
+            <MyPacks/>
+          </Route>
+          <Route path="/quotafbot">
+            <div className={style.buttons}>
+              <span className={style.links + " mypack"} onMouseOver={this.showAllInstalls} onMouseOut={this.hideAllCharts}>all installs</span>
+              <span className={style.links + " mypack"} onMouseOver={this.showAllUsages} onMouseOut={this.hideAllCharts}>all usages</span>
+              <Link className={style.links + " mypack"} to="/mypacks">My stickerpacks</Link>
+              <Link className={style.links + " mypack"} to="/">All stickerpacks</Link>
+            </div>
+            <QuotAf/>
           </Route>
           <Route path="/">
           <div className={style.buttons}>
             <span className={style.links + " mypack"} onMouseOver={this.showAllInstalls} onMouseOut={this.hideAllCharts}>all installs</span>
             <span className={style.links + " mypack"} onMouseOver={this.showAllUsages} onMouseOut={this.hideAllCharts}>all usages</span>
             <Link className={style.links + " mypack"} to="/mypacks">My stickerpacks</Link>
+            <Link className={style.links + ' mypack'} to="/quotafbot">QuotAfBot stats</Link>
           </div>
-            <TopPackList tops={this.state.tops} />
+            <TopPackList tops={this.state.tops}/>
           </Route>
         </Switch>
-        <Widget />
-        <Footer />
+        <Widget/>
+        <Footer/>
       </div>
     )
   }

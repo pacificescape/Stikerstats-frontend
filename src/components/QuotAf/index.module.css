@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  margin: auto;
+  width: 85%;
+  white-space: pre-wrap
+}
+
+.stats {
+  margin: 10px 20px 10px 20px;
+}
+
+.stats p {
+  margin: 5px
+}
