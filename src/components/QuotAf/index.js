@@ -40,7 +40,7 @@ function QuotAf() {
       },
       options: {
         responsive: true,
-        maintainAspectRatio: true,
+        maintainAspectRatio: false,
         legend: {
           display: false
         },
@@ -75,36 +75,28 @@ function QuotAf() {
       <div className="canvas-stickers">
         <h2>stickers</h2>
         <canvas
-        id={"stickers"}
-        width={300}
-        height={100}>
+        id={"stickers"}>
 
         </canvas>
       </div>
       <div className="canvas-users">
         <h2>users</h2>
         <canvas
-        id={"users"}
-        width={300}
-        height={100}>
+        id={"users"}>
 
         </canvas>
       </div>
       <div className="canvas-generated">
         <h2>generated</h2>
         <canvas
-        id={"generated"}
-        width={300}
-        height={100}>
+        id={"generated"}>
 
         </canvas>
       </div>
       <div className="canvas-latency">
         <h2>latency</h2>
         <canvas
-        id={"latency"}
-        width={300}
-        height={100}>
+        id={"latency"}>
 
         </canvas>
       </div>
