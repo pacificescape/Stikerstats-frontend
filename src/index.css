@@ -40,8 +40,3 @@ a {
 iframe {
   border-radius: 10px;
 }
-
-canvas {
-  width: 120px !important;
-  height: 120px !important;
-}

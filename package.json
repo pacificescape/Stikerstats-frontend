@@ -26,7 +26,7 @@
   },
   "homepage": "https://stickerstat.info/",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start --no-cache",
     "build": "npm i && react-scripts build && sudo rsync -r build/* /var/www/stickerstat.info/html/",
     "rebuild": "react-scripts build && sudo rsync -r build/* /var/www/stickerstat.info/html/",
     "test": "react-scripts test",
