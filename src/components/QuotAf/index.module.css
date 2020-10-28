@@ -1,10 +1,14 @@
 .wrapper {
   display: flex;
-  flex-flow: wrap;
+  flex-flow: column;
   justify-content: center;
   margin: auto;
   width: 85%;
   white-space: pre-wrap
+}
+
+.wrapper canvas {
+  max-height: 200px;
 }
 
 .stats {

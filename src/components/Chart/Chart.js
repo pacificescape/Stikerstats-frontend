@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import Chart from 'chart.js'
+import styles from './chart.module.css'
 
 export default class ChartComp extends Component {
     constructor(props) {
         super(props)
-        this.node = React.createRef()
+        // this.node = React.createRef()
         this.state = {
             name: props.name,
             total: props.total,
@@ -92,7 +93,7 @@ export default class ChartComp extends Component {
 
     render() {
         return (
-            <div>
+            <div className={styles.canvasWrapper}>
                 <canvas
                     id={this.state.name}
                     ref={this.node}

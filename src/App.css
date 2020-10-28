@@ -19,3 +19,8 @@ a {
 span {
     display: inline-block;
 }
+
+canvas {
+    width: 120px;
+    height: 120px;
+  }
